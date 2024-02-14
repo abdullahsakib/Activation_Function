@@ -143,6 +143,7 @@ plt.show()
 
 *Calculations can be performed much faster with ReLU because no exponential terms are included in the function.
 
+### Code:
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -178,12 +179,54 @@ plt.show()
 
 *The value of the positive side can go very high. That may lead to a computational issue during the training.
 
-#### 4. Leaky ReLU activation function
+## 4. Leaky ReLU activation function
+
+### Key features:
+
+*The leaky ReLU activation function is a modified version of the default ReLU function.
+
+*Like the ReLU activation function, this function does not have the vanishing gradient problem.
+
+*If the input value is 0 greater than 0, the leaky ReLU function outputs the input as it is like the default ReLU function does. 
+
+*However, if the input is less than 0, the leaky ReLU function outputs a small negative value defined by αz (where α is a small constant value, usually 0.01 and z is the input value).
+
+*It does not have any linear component with zero derivatives (slopes). Therefore, it can avoid the dying ReLU problem.
+
+*The learning process with leaky ReLU is faster than the default ReLU.
+
+### Code: 
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+def leaky_relu(x, alpha=0.01):
+    return np.where(x > 0, x, alpha * x)
+
+# Generate data
+x = np.linspace(-10, 10, 400)
+y = leaky_relu(x)
+
+# Visualization
+plt.figure(figsize=(10, 5))
+plt.plot(x, y, label='Leaky ReLU', color='blue')
+plt.title('Leaky ReLU Activation Function')
+plt.xlabel('Input')
+plt.ylabel('Output')
+plt.grid()
+plt.legend()
+plt.show()
+
+```
+![leaky_relu](https://github.com/abdullahsakib/Activation_Function/assets/54322794/9420232e-1518-44d2-9442-1510ee5ad567)
 
 
+### Usage:
+The same usage of the ReLU function is also valid for the leaky ReLU function.
+
+## 
 
 ...
-    python
-    print("i")
+  
 ...
 
