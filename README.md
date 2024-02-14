@@ -52,15 +52,23 @@ Key features:
 
 Usage:
  
-Until recently, the tanh function was used as an activation function for the hidden layers in MLPs, CNNs and RNNs.
-However, the tanh function is still used in RNNs.
-Currently, we do not usually use the tanh function for the hidden layers in MLPs and CNNs. Instead, we use ReLU or Leaky ReLU there.
-We never use the tanh function in the output layer.
+*Until recently, the tanh function was used as an activation function for the hidden layers in MLPs, CNNs and RNNs.
+
+
+*The tanh function was never used in the output layer.
+
 Drawbacks:
 We do not usually use the tanh function in the hidden layers because of the following drawback.
 The tanh function has the vanishing gradient problem.
 This function is computationally expensive as an e^z term is included. 3. ReLU activation function
 
+Understand the Purpose:
 
+Classification: For binary classification, sigmoid is common in the output layer, while softmax is standard for multi-class tasks. For hidden layers, ReLU and its variants often work well.
+Regression: Linear or identity functions are typical for the output layer, with ReLU-based functions in hidden layers.
+Avoid Saturating Activations for Deep Networks:
+
+Functions like the sigmoid and tanh can saturate (output values close to their min/max) causing vanishing gradient problems, especially in deep networks.
+ReLU and its variants are often preferred due to their non-saturating nature.
 
 
