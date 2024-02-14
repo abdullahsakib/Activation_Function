@@ -1,8 +1,12 @@
 # Activation_Function
 Different types of activation functions
 
+
+
+
 Some commonly-used activation functions in neural networks are:
-1. Sigmoid activation function
+
+# 1. Sigmoid activation function
    
 Key features:
 
@@ -15,6 +19,28 @@ Key features:
 *It converts large negative values towards 0 and large positive values towards 1.
 
 *It returns 0.5 for the input 0. The value 0.5 is known as the threshold value which can decide that a given input belongs to what type of two classes.
+
+```python
+import numpy as np
+
+def sigmoid(x):
+    return 1 / (1 + np.exp(-x))
+
+# Test
+x_values = np.linspace(-10, 10, 100)  # create 100 points between -10 and 10
+y_values = sigmoid(x_values)
+
+# Plotting
+import matplotlib.pyplot as plt
+
+plt.plot(x_values, y_values)
+plt.title("Sigmoid Activation Function")
+plt.xlabel("Input")
+plt.ylabel("Output")
+plt.grid(True)
+plt.show()
+
+```
 
 ![image](https://github.com/abdullahsakib/Activation_Function/assets/54322794/8625852d-d3a0-4876-9579-e8d198b6ea13)
 
@@ -98,4 +124,10 @@ Drawbacks:
 
 *The value of the positive side can go very high. That may lead to a computational issue during the training.
 
+4. Leaky ReLU activation function
+
+...
+    python
+    print("i")
+...
 
