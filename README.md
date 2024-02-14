@@ -261,7 +261,7 @@ plt.show()
 ![elu](https://github.com/abdullahsakib/Activation_Function/assets/54322794/1afa017b-2f75-41f4-a780-58b3d68df894)
 
 ### Usage:
-
+*This function used in CNN problem.
 ## 6. Identity activation function
 
 ### Key features:
@@ -300,11 +300,9 @@ plt.show()
 ![linear](https://github.com/abdullahsakib/Activation_Function/assets/54322794/d11f09cd-c624-43f1-ad8f-c732e1395a0b)
 
 
+
 ### Usage:
-
-*This function used in CNN problem.
-
-
+*This function is only used in the output layer of a neural network model that solves a regression problem.
 ## 7.	Softmax activation function
 
 ### Key features:
