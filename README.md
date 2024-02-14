@@ -50,6 +50,9 @@ Key features:
 
 *The tanh function has a steeper gradient than the sigmoid function has.
 
+![image](https://github.com/abdullahsakib/Activation_Function/assets/54322794/23081c7d-f0b0-4a12-ad47-2476474c2fa2)
+
+
 Usage:
  
 *Until recently, the tanh function was used as an activation function for the hidden layers in MLPs, CNNs and RNNs.
@@ -58,17 +61,41 @@ Usage:
 *The tanh function was never used in the output layer.
 
 Drawbacks:
-We do not usually use the tanh function in the hidden layers because of the following drawback.
-The tanh function has the vanishing gradient problem.
-This function is computationally expensive as an e^z term is included. 3. ReLU activation function
 
-Understand the Purpose:
+*The tanh function has the vanishing gradient problem.
 
-Classification: For binary classification, sigmoid is common in the output layer, while softmax is standard for multi-class tasks. For hidden layers, ReLU and its variants often work well.
-Regression: Linear or identity functions are typical for the output layer, with ReLU-based functions in hidden layers.
-Avoid Saturating Activations for Deep Networks:
+*This function is computationally expensive as an e^z term is included. 3. ReLU activation function
 
-Functions like the sigmoid and tanh can saturate (output values close to their min/max) causing vanishing gradient problems, especially in deep networks.
-ReLU and its variants are often preferred due to their non-saturating nature.
+3. ReLU activation function
+
+Key features:
+
+*The ReLU (Rectified Linear Unit) activation function is a great alternative to both sigmoid and tanh activation functions.
+
+*This function does not have the vanishing gradient problem.
+
+*This function is computationally inexpensive. It is considered that the convergence of ReLU is 6 times faster than sigmoid and tanh functions.
+
+*If the input value is 0 or greater than 0, the ReLU function outputs the input as it is. If the input is less than 0, the ReLU function outputs the value 0.
+
+*The output of the ReLU function can range from 0 to positive infinity.
+
+*The convergence is faster than sigmoid and tanh functions. This is because the ReLU function has a fixed derivate (slope) for one linear component and a zero derivative for the other linear component.
+
+
+*Calculations can be performed much faster with ReLU because no exponential terms are included in the function.
+
+![image](https://github.com/abdullahsakib/Activation_Function/assets/54322794/5198a64e-8ebd-4fcd-a6b0-7c56875a8f6f)
+
+
+Usage:
+
+*The ReLU function is the default activation function for hidden layers in modern MLP and CNN neural network models.
+
+Drawbacks:
+
+*The main drawback of using the ReLU function is that it has a dying ReLU problem.
+
+*The value of the positive side can go very high. That may lead to a computational issue during the training.
 
 
