@@ -224,9 +224,120 @@ plt.show()
 ### Usage:
 The same usage of the ReLU function is also valid for the leaky ReLU function.
 
-## 
+## 5. ELU activation function
 
-...
-  
-...
+### Key features:
+
+*Exponential Linear Units are different from other linear units and activation functions because ELU's can take negetive inputs. Meaning, the ELU algorithm can process negetive inputs, into usefull and significant outputs.
+
+### Code:
+
+```python
+#Step 1: Import required libraries
+import numpy as np
+import matplotlib.pyplot as plt
+#Step 2: Define the ELU function
+def elu(x, alpha=1.0):
+    """ELU activation function."""
+    return np.where(x > 0, x, alpha * (np.exp(x) - 1))
+
+#Step 3: Visualize the ELU function
+# Generate data
+x = np.linspace(-10, 10, 400)
+y = elu(x)
+
+# Plot
+plt.figure(figsize=(10, 5))
+plt.plot(x, y, label='ELU function', color='blue')
+plt.title('Exponential Linear Unit (ELU) Activation Function')
+plt.xlabel('Input')
+plt.ylabel('Output')
+plt.grid(True, which='both', linestyle='--', linewidth=0.5)
+plt.axhline(0, color='black',linewidth=0.5)
+plt.axvline(0, color='black',linewidth=0.5)
+plt.legend()
+plt.show()
+```
+![elu](https://github.com/abdullahsakib/Activation_Function/assets/54322794/1afa017b-2f75-41f4-a780-58b3d68df894)
+
+### Usage:
+
+## 6. Identity activation function
+
+### Key features:
+
+*This is also known as the linear activation function.
+
+*This function outputs the input value as it is. No changes are made to the input.
+
+### Code:
+```python
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define the linear activation function
+def linear_activation(x):
+    return x
+
+# Generate a range of values
+x = np.linspace(-10, 10, 400)
+
+# Apply the activation function
+y = linear_activation(x)
+
+# Plot
+plt.figure(figsize=(8, 6))
+plt.plot(x, y, label="Linear Activation", color="blue")
+plt.title("Linear Activation Function")
+plt.xlabel("Input")
+plt.ylabel("Output")
+plt.grid(True)
+plt.legend()
+plt.show()
+
+```
+![linear](https://github.com/abdullahsakib/Activation_Function/assets/54322794/d11f09cd-c624-43f1-ad8f-c732e1395a0b)
+
+
+### Usage:
+
+*This function used in CNN problem.
+
+
+## 7.	Softmax activation function
+
+### Key features:
+
+*The softmax function calculates the probability value of an event (class) over K different events (classes). It calculates the probability values for each class. The sum of all probabilities is 1 meaning that all events (classes) are mutually exclusive.
+### Code:
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+def softmax(x):
+    e_x = np.exp(x - np.max(x))
+    return e_x / e_x.sum(axis=0)
+
+# Example input
+x = np.array([2.0, 1.0, 0.1])
+outputs = softmax(x)
+print(outputs)
+
+labels = ['x1', 'x2', 'x3']
+plt.bar(labels, outputs)
+plt.ylabel('Probability')
+plt.title('Softmax Activation Output')
+plt.show()
+
+```
+
+![softmax](https://github.com/abdullahsakib/Activation_Function/assets/54322794/13c90af9-1d58-475e-a1d7-9f45bc864d76)
+
+
+
+### Usage:
+Softmax function used in the output layer of a multiclass classification problem.
+
 
